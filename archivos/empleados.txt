@@ -1,0 +1,3 @@
+Charlie - Brown - 11111111 - M - 140 - 11500 - mañana - ./fotos/11111111-Brown.jpg
+Linus Sam - Van Pelt - 22222222 - M - 143 - 12500 - noche - ./fotos/22222222-Van Pelt.jpg
+Patty - Peppermint - 33333333 - F - 142 - 11000 - tarde - ./fotos/33333333-Peppermint.jpg

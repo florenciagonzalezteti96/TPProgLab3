@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML 5 – Formulario Login</title>
+    <script src="./funciones.js"></script>
+  </head>
+  <body>
+    <header>
+      <h2>Login</h2>
+    </header>
+    <form
+      id="form"
+      name="formLogin"
+      style="
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 10px;
+        margin: 2% 35%;
+      "
+      action="./backend/verificarUsuario.php"
+      method="POST"
+    >
+      <table>
+        <thead>
+          Ingreso de credenciales
+        </thead>
+        <hr />
+        <tbody>
+          <tr>
+            <td>DNI:</td>
+            <td>
+              <input
+                type="number"
+                min="1000000"
+                max="55000000"
+                name="txtDni"
+                id="txtDni"
+              />
+              <span name="span" id="txtDniSpan" style="display: none">*</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Apellido:</td>
+            <td>
+              <input type="text" name="txtApellido" id="txtApellido" />
+              <span name="span" id="txtApellidoSpan" style="display: none"
+                >*</span
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr />
+      <button
+        id="btnLimpiar"
+        type="reset"
+        style="margin-left: 80%; margin-top: 2%; margin-bottom: 2%"
+      >
+        Limpiar
+      </button>
+      <button
+        id="btnEnviar"
+        name="btnEnviar"
+        type="button"
+        onclick="AdministrarValidaciones()"
+        style="margin-left: 80%; margin-top: 1%; margin-bottom: 1%"
+      >
+        Enviar
+      </button>
+    </form>
+  </body>
+</html>
