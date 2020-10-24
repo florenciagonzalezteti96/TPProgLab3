@@ -1,6 +1,6 @@
 <?php
 
-require ('persona.php');
+require_once ('persona.php');
 class Empleado extends Persona
 {
     protected $_legajo;
