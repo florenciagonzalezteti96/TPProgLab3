@@ -1,9 +1,9 @@
 <?php
 
-require('./clases/fabrica.php');
-include('./backend/validarSesion.php');
+require_once('/clases/fabrica.php');
+include('/backend/validarSesion.php');
 
-$_archivoEmpleados = "./archivos/empleados.txt";
+$_archivoEmpleados = "/archivos/empleados.txt";
 $modificar = FALSE;
 $rdoTurno = "<input type='radio' name='rdoTurno' value='mañana' checked/>
               <label>Mañana</label><br />
@@ -62,7 +62,7 @@ if (isset($_POST['hdnModificar'])) {
             </select>";
             break;
         }
-        break; //for
+        break;
       }
     }
   }
@@ -75,7 +75,7 @@ if ($modificar) {
       <meta charset='UTF-8' />
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       <title>HTML5 Formulario Modificar Empleado</title>
-      <script src='./funciones.js'></script>
+      <script src='/funciones.js'></script>
     </head>
     <body>
       <header>
@@ -90,7 +90,7 @@ if ($modificar) {
         '
         enctype='multipart/form-data'
   
-        action='./administracion.php'
+        action='/administracion.php'
   
         method='POST'
       >
@@ -184,7 +184,7 @@ if ($modificar) {
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>HTML5 - Formulario Alta Empleado</title>
-    <script src='./funciones.js'></script>
+    <script src='/funciones.js'></script>
   </head>
   <body>
     <header>
@@ -199,7 +199,7 @@ if ($modificar) {
       '
       enctype='multipart/form-data'
 
-      action='./administracion.php'
+      action='/administracion.php'
 
       method='POST'
     >
