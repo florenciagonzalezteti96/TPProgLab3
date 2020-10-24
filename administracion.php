@@ -1,6 +1,6 @@
 <?php
 
-require('./clases/fabrica.php');
+require('/clases/fabrica.php');
 
 $_pathMostrar = '<!DOCTYPE html>
                     <html lang="en">
@@ -10,7 +10,7 @@ $_pathMostrar = '<!DOCTYPE html>
                         <title>HTML5 - Empleados</title>
                     </head>
                     <body>
-                    <a href="./backend/mostrar.php">Mostrar Empleados</a>
+                    <a href="/backend/mostrar.php">Mostrar Empleados</a>
                     </body>
                     </html>';
 
@@ -22,11 +22,11 @@ $_pathIndex = '<!DOCTYPE html>
                         <title>HTML5 - Empleados</title>
                     </head>
                     <body>
-                    <a href="./index.php">Volver al alta</a>
+                    <a href="/index.php">Volver al alta</a>
                     </body>
                     </html> ';
 
-$_pathArchivoEmpleados = "./archivos/empleados.txt";
+$_pathArchivoEmpleados = "/archivos/empleados.txt";
 
 
 //chequeo valores de datos empleado
@@ -61,7 +61,7 @@ if (isset($_POST["txtNombre"]) && isset($_POST["txtApellido"]) && isset($_POST["
     } else if ($_FILES['txtFoto']['size'] > 10485760) {
         echo "El tamaño de la foto del empleado es demasiado grande.";
     } else {
-        $pathFotoEmpleado = "./fotos/" . $_nuevoEmpleado->GetDni() . "-" . $_nuevoEmpleado->GetApellido() . '.' . pathinfo($_FILES['txtFoto']['name'], PATHINFO_EXTENSION);
+        $pathFotoEmpleado = "/fotos/" . $_nuevoEmpleado->GetDni() . "-" . $_nuevoEmpleado->GetApellido() . '.' . pathinfo($_FILES['txtFoto']['name'], PATHINFO_EXTENSION);
         $_nuevoEmpleado->SetPathFoto($pathFotoEmpleado);
         if (file_exists($pathFotoEmpleado)) {
             echo "La foto del empleado ya ha sido subida";
