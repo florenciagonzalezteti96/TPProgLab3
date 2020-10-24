@@ -84,16 +84,18 @@
                                 </button>
                                 </td> 
                                 </tr>";
-                                    }
-                                }
-                            }
+                                    }//if
+                                }//while
+                            }//if filegetcontents
                             fclose($_archivoEmpleados);
-                        } else {
-                            echo "Error al abrir el archivo de empleados";
-                        }
-                    } else {
-                        echo "Error al acceder al directorio del archivo de empleados";
-                    }
+                           } //if fopen
+//                             else {
+//                             echo "Error al abrir el archivo de empleados";
+//                         }
+                    }//if isdir
+//                     else {
+//                         echo "Error al acceder al directorio del archivo de empleados";
+//                     }
                     ?>
                 <tr>
                     <td>
@@ -104,7 +106,7 @@
         </table>
         <input type='hidden' id='hdnModificar' name='hdnModificar' value='vacio' />
     </form>
-    <a href="/index.php">Alta de Empleados</a>
+    <a href='/index.php'>Alta de Empleados</a>
     <a href='/cerrarSesion.php'>Desloguearse</a>
 </body>
 
