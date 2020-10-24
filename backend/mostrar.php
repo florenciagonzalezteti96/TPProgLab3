@@ -28,7 +28,7 @@
                 <tr>
                     <?php
                     require_once('/clases/empleado.php');
-                    include('/validarSesion.php');
+                    require_once('/backend/validarSesion.php');
 
                     $_pathDirectorioEmpleados = "/archivos";
                     $_pathArchivoEmpleados = $_pathDirectorioEmpleados . "/empleados.txt";
@@ -107,7 +107,7 @@
         <input type='hidden' id='hdnModificar' name='hdnModificar' value='vacio' />
     </form>
     <a href='/index.php'>Alta de Empleados</a>
-    <a href='/cerrarSesion.php'>Desloguearse</a>
+    <a href='/backend/cerrarSesion.php'>Desloguearse</a>
 </body>
 
 
