@@ -28,7 +28,7 @@
                 <tr>
                     <?php
                     require_once('/clases/empleado.php');
-                    require_once('/backend/validarSesion.php');
+                    //require_once('/backend/validarSesion.php');
 
                     $_pathDirectorioEmpleados = "/archivos";
                     $_pathArchivoEmpleados = $_pathDirectorioEmpleados . "/empleados.txt";
