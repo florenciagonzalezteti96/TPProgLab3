@@ -1,7 +1,7 @@
 <?php
 
 require_once('/clases/fabrica.php');
-include('/backend/validarSesion.php');
+//include('/backend/validarSesion.php');
 
 $_archivoEmpleados = "/archivos/empleados.txt";
 $modificar = FALSE;
