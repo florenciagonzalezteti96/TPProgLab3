@@ -1,7 +1,7 @@
 <?php
 
-require('/clases/fabrica.php');
-require('/validarSesion.php');
+require_once('/clases/fabrica.php');
+//require_once('/validarSesion.php');
 
 $_pathDirectorioEmpleados = "/archivos";
 $_pathArchivoEmpleados = $_pathDirectorioEmpleados . "/empleados.txt";
