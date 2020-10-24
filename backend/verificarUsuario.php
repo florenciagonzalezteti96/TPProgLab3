@@ -6,7 +6,7 @@ require_once('/clases/fabrica.php');
 $_pathDirectorioEmpleados = "/archivos";
 $_pathArchivoEmpleados = $_pathDirectorioEmpleados . "/empleados.txt";
 
-$_pathMostrar = "/mostrar.php";
+$_pathMostrar = "/backend/mostrar.php";
 
 $_pathLogin= "/login.html";
 
