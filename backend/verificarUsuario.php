@@ -44,7 +44,8 @@ if(isset($_POST["txtDni"]) && isset($_POST["txtApellido"]))
                         else
                         {
                             echo 'Los datos ingresados no coinciden con los de ningun empleado en la fabrica.<br>Se redireccionara al login. Si no se redirecciona, cliquee aqui: <a href="../login.html">Volver al login.</a>';
-                            header("refresh:5;url=".$_pathLogin); 
+                            header("refresh:5;url=".$_pathLogin);
+                            break;
                         }
                     }//if puedo crear al empleado
                 }//while feof
