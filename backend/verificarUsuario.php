@@ -1,7 +1,7 @@
 <?php
 
 require('../clases/fabrica.php');
-require('./validarSesion.php');
+//require('./validarSesion.php');
 
 $_pathDirectorioEmpleados = "../archivos";
 $_pathArchivoEmpleados = $_pathDirectorioEmpleados . "/empleados.txt";
@@ -51,6 +51,7 @@ if(isset($_POST["txtDni"]) && isset($_POST["txtApellido"]))
                 }//while feof
                 if($existe)
                 {
+                    include('./validarSesion.php');
                     $_SESSION["DNIEmpleado"] = $dniEmpleado;
                     header("Location: ../index.php");
                 }
