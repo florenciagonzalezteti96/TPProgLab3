@@ -6,6 +6,5 @@ if(!isset($_SESSION))
 }
 if(!isset($_SESSION['DNIEmpleado']))
 {
-    "El login ha fallado, redirigiendo al login...";
-    header("refresh:5;url= ../login.html");
+    header("Location: /login.html");
 }
