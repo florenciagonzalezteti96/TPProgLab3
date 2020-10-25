@@ -1,6 +1,6 @@
 <?php
 
-require('/clases/fabrica.php');
+require('./clases/fabrica.php');
 
 $_pathMostrar = '<!DOCTYPE html>
                     <html lang="en">
@@ -10,7 +10,7 @@ $_pathMostrar = '<!DOCTYPE html>
                         <title>HTML5 - Empleados</title>
                     </head>
                     <body>
-                    <a href="/backend/mostrar.php">Mostrar Empleados</a>
+                    <a href="./backend/mostrar.php">Mostrar Empleados</a>
                     </body>
                     </html>';
 
@@ -22,11 +22,11 @@ $_pathIndex = '<!DOCTYPE html>
                         <title>HTML5 - Empleados</title>
                     </head>
                     <body>
-                    <a href="/index.html">Mostrar Empleados</a>
+                    <a href="./index.html">Mostrar Empleados</a>
                     </body>
                     </html> ';
 
-$_archivoEmpleados = "/archivos/empleados.txt";
+$_archivoEmpleados = "./archivos/empleados.txt";
 
 if (isset($_GET["txtLegajo"])) {
     if ($archivo = fopen($_archivoEmpleados, 'r+')) {

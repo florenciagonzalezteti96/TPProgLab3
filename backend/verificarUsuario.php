@@ -1,14 +1,14 @@
 <?php
 
-require_once('/clases/fabrica.php');
-//require_once('/validarSesion.php');
+require('../clases/fabrica.php');
+require('./validarSesion.php');
 
-$_pathDirectorioEmpleados = "/archivos";
+$_pathDirectorioEmpleados = "../archivos";
 $_pathArchivoEmpleados = $_pathDirectorioEmpleados . "/empleados.txt";
 
-$_pathMostrar = "/backend/mostrar.php";
+$_pathMostrar = "./mostrar.php";
 
-$_pathLogin= "/login.html";
+$_pathLogin= "../login.html";
 
 $existe = FALSE;
 
@@ -17,11 +17,11 @@ if(isset($_POST["txtDni"]) && isset($_POST["txtApellido"]))
     $dniEmpleado = $_POST["txtDni"];
     $apellidoEmpleado = $_POST["txtApellido"];
 
-    if(is_dir($_pathDirectorioEmpleados))
+    if(is_dir($_pathDirectorioEmpleados))//si existe el directorio
     {
-        if($_archivoEmpleados = fopen($_pathArchivoEmpleados, "r+"))
+        if($_archivoEmpleados = fopen($_pathArchivoEmpleados, "r+"))//intento abrir el archivo
         {
-            if ('' != file_get_contents($_pathArchivoEmpleados))
+            if ('' != file_get_contents($_pathArchivoEmpleados))//si contiene algo el archivo
             {
                 while(!feof($_archivoEmpleados))
                 {
@@ -40,21 +40,38 @@ if(isset($_POST["txtDni"]) && isset($_POST["txtApellido"]))
                         {
                             $existe = TRUE;
                             break;
-                        }
+                        }//if los datos coinciden
                         else
                         {
+                            echo 'Los datos ingresados no coinciden con los de ningun empleado en la fabrica.<br>Se redireccionara al login. Si no se redirecciona, cliquee aqui: <a href="../login.html">Volver al login.</a>';
                             header("refresh:5;url=".$_pathLogin); 
                         }
-                    }
-                }
+                    }//if puedo crear al empleado
+                }//while feof
                 if($existe)
                 {
                     $_SESSION["DNIEmpleado"] = $dniEmpleado;
-                    header("Location: /index.html");
+                    header("Location: ../index.html");
                 }
              
-            fclose($_archivoEmpleados)
+            fclose($_archivoEmpleados);
+            }//if contenido
+            else
+            {
+                echo "El archivo esta vacio.";
             }
-          }
         }
-      }
+        else
+        {
+            echo "NO se pudo abrir el archivo.";
+        }
+    }
+    else
+    {
+        echo "NO se pudo abrir el directorio.";
+    }
+}
+else
+{
+    echo "NO se pudo obtener los datos.";
+}

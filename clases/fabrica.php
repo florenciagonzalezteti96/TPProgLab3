@@ -1,7 +1,7 @@
 <?php
 
-require_once('empleado.php');
-require_once('interfaces.php');
+require('empleado.php');
+require('interfaces.php');
 
 class Fabrica implements IArchivo
 {

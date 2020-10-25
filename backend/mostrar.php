@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML 5 – Listado de Empleados</title>
-    <script src="/funciones.js"></script>
+    <script src="../funciones.js"></script>
 </head>
 
 <body>
     <header>
         <h2>Listado de Empleados</h2>
     </header>
-    <form name="formModificar" id="form" action="/index.php" method="POST">
+    <form name="formModificar" id="form" action="../index.php" method="POST">
         <table>
             <thead>
                 <th>
@@ -27,10 +27,10 @@
                 </tr>
                 <tr>
                     <?php
-                    require_once('/clases/empleado.php');
-                    //require_once('/backend/validarSesion.php');
+                    require('../clases/empleado.php');
+                    include('./validarSesion.php');
 
-                    $_pathDirectorioEmpleados = "/archivos";
+                    $_pathDirectorioEmpleados = "../archivos";
                     $_pathArchivoEmpleados = $_pathDirectorioEmpleados . "/empleados.txt";
 
                     if (is_dir($_pathDirectorioEmpleados)) {
@@ -77,25 +77,23 @@
                                 <img src='." . $empleadoNuevo->GetPathFoto() . "' alt='Foto de empleado' width='90px' height='90px'>
                                 </td>
                                 <td> 
-                                <a href='/eliminar.php?txtLegajo=" . $datosEmpleado[4] . "' method='GET'> Eliminar </a> 
+                                <a href='../eliminar.php?txtLegajo=" . $datosEmpleado[4] . "' method='GET'> Eliminar </a> 
                                 </td>
                                 <td> 
                                 <button id='btnModificar' name='btnModificar' type='button' onclick='AdministrarModificar(" . $empleadoNuevo->GetDni() . ")'>Modificar
                                 </button>
                                 </td> 
                                 </tr>";
-                                    }//if
-                                }//while
-                            }//if filegetcontents
+                                    }
+                                }
+                            }
                             fclose($_archivoEmpleados);
-                           } //if fopen
-//                             else {
-//                             echo "Error al abrir el archivo de empleados";
-//                         }
-                    }//if isdir
-//                     else {
-//                         echo "Error al acceder al directorio del archivo de empleados";
-//                     }
+                        } else {
+                            echo "Error al abrir el archivo de empleados";
+                        }
+                    } else {
+                        echo "Error al acceder al directorio del archivo de empleados";
+                    }
                     ?>
                 <tr>
                     <td>
@@ -106,8 +104,8 @@
         </table>
         <input type='hidden' id='hdnModificar' name='hdnModificar' value='vacio' />
     </form>
-    <a href='/index.php'>Alta de Empleados</a>
-    <a href='/backend/cerrarSesion.php'>Desloguearse</a>
+    <a href="../index.php">Alta de Empleados</a>
+    <a href='./cerrarSesion.php'>Desloguearse</a>
 </body>
 
 
