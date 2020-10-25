@@ -2,11 +2,7 @@
 
 require('./clases/fabrica.php');
 //include('./backend/validarSesion.php');
-if(!isset($_SESSION))
-{
-    session_start();
-}
-else if(!isset($_SESSION['DNIEmpleado']))
+if(!isset($_SESSION) || !isset($_SESSION['DNIEmpleado']))
 {
     header("refresh:5;url= ./login.html");
 }
