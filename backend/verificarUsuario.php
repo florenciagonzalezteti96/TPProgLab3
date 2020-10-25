@@ -51,7 +51,10 @@ if(isset($_POST["txtDni"]) && isset($_POST["txtApellido"]))
                 }//while feof
                 if($existe)
                 {
-                    include('./validarSesion.php');
+                    if(!isset($_SESSION))
+                    {
+                        session_start();
+                    }
                     $_SESSION["DNIEmpleado"] = $dniEmpleado;
                     header("Location: ../index.php");
                 }
