@@ -51,7 +51,7 @@ if(isset($_POST["txtDni"]) && isset($_POST["txtApellido"]))
                 if($existe)
                 {
                     $_SESSION["DNIEmpleado"] = $dniEmpleado;
-                    header("Location: ../index.html");
+                    header("Location: ../index.php");
                 }
              
             fclose($_archivoEmpleados);
