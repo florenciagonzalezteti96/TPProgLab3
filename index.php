@@ -4,7 +4,7 @@ require('./clases/fabrica.php');
 //include('./backend/validarSesion.php');
 if(!isset($_SESSION) || !isset($_SESSION['DNIEmpleado']))
 {
-    header("refresh:5;url= ./login.html");
+    header("refresh:5;url= /login.html");
 }
 
 $_archivoEmpleados = "./archivos/empleados.txt";
