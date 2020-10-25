@@ -1,7 +1,7 @@
 <?php
 
-unset($_SESSION['DNIEmpleado']);
-        if(!isset($_SESSION['DNIEmpleado']))
+unset($_SESSION);
+        if(!isset($_SESSION))
         {
                 header("Location: /login.html");       
         }
